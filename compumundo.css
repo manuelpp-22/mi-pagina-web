@@ -1,0 +1,266 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #333; /* Cambia a un color oscuro para mejor contraste */
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: #160e42;
+    color: #fff;
+    padding: 1.5rem 0;
+}
+
+header .logo {
+    font-size: 2rem;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url(engineer-4922413_1920.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #dbdada;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #dbdada;
+}
+
+/* Servicios */
+.servicios {
+    padding: 3rem 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.servicios-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.servicio {
+    background: #fff;
+    padding: 2rem;
+    margin: 1rem;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-10px);
+}
+
+.servicio i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f39c12;
+}
+
+/* Productos */
+.productos {
+    padding: 3rem 0;
+    background: #ebedee;
+    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.carousel-item {
+    min-width: 300px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Contacto */
+.contacto {
+    padding: 3rem 0;
+    background: #160e42;
+    color: #fff;
+    text-align: center;
+}
+
+.contacto input, .contacto textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.contacto button {
+    background: #fff;
+    color: #f39c12;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contacto button:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+/* Nosotros */
+.nosotros {
+    padding: 3rem 0;
+    background: #fff;
+    text-align: center;
+}
+
+.nosotros h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.nosotros p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 2rem 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.newsletter input {
+    padding: 1rem;
+    width: 300px;
+    margin-right: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+
+.newsletter button {
+    background: #f39c12;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #e67e22;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Scroll reveal */
+.servicio, .carousel-item, .nosotros, .newsletter {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.servicio.visible, .carousel-item.visible, .nosotros.visible, .newsletter.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Animación de entrada para los productos destacados */
+@keyframes slideIn {
+    0% {
+        transform: translateY(30px); /* Comienza desplazado hacia abajo */
+        opacity: 0; /* Comienza invisible */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a la posición original */
+        opacity: 1; /* Se vuelve visible */
+    }
+}
+
+/* Añadir la animación a los productos al aparecer en el viewport */
+.carousel-item.visible {
+    animation: slideIn 0.5s forwards; /* Aplicar la animación */
+}
